@@ -25,3 +25,6 @@ for (const file of RFunctionFiles) {
     console.log(chalk.blue(file + ' LOADED'));
 }
 
+process.on('unhandledRejection', err => {
+    console.log(err);
+});
