@@ -38,12 +38,12 @@ module.exports = (client) => {
 
 `)
 
-            // msg.addFields(
-            //     { name: '\u200B', value: '\u200B' },
-            //     { name: 'Changes 1H', value: eh + coin.priceChange1h + '%', inline: true },
-            //     { name: 'Changes 1D', value: ed + coin.priceChange1d + '%', inline: true },
-            //     { name: 'Changes 1W', value: ew + coin.priceChange1w + '%', inline: true },
-            // )
+            msg.setFields(
+                { name: '\u200B', value: '\u200B' },
+                { name: 'Changes 1H', value:  + coin.priceChange1h + '%', inline: true },
+                { name: 'Changes 1D', value:  + coin.priceChange1d + '%', inline: true },
+                { name: 'Changes 1W', value:  + coin.priceChange1w + '%', inline: true },
+            )
             msg.setTimestamp()
 
 
