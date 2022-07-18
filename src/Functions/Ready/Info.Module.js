@@ -13,12 +13,11 @@ module.exports = (client) => {
 
         response.data.coins.forEach(coin => {
 
-            console.log(coin.priceChange1h);
+            if (coin.priceChange1h.toString().startsWith('-')) eh = "📉"; else eh = "📈 +"
+            if (coin.priceChange1d.toString().startsWith('-')) ed = "📉"; else ed = "📈 +"
+            if (coin.priceChange1w.toString().startsWith('-')) ew = "📉"; else ew = "📈 +"
 
-            // if (coin.priceChange1h.startsWith('-')) eh = "📉"; else eh = "📈 +"
-            // if (coin.priceChange1d.startsWith('-')) ed = "📉"; else ed = "📈 +"
-            // if (coin.priceChange1w.startsWith('-')) ew = "📉"; else ew = "📈 +"
-            EMBED.setColor('')
+            EMBED.setColor('#e83c70')
             EMBED.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
             EMBED.setAuthor({ name: coin.name, iconURL: coin.icon, url: coin.websiteUrl })
             EMBED.setTitle(coin.name + ' Information')
