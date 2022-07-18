@@ -1,4 +1,5 @@
 var axios = require('axios');
+const { MessageEmbed } = require('discord.js');
 const { Endpoints } = require('../../../data/APIEndPoints');
 
 var config = {
@@ -7,17 +8,24 @@ var config = {
     headers: {}
 };
 
-module.exports = () => {
+module.exports = (client) => {
     axios(config).then(response => {
+        const msg = new MessageEmbed()
+
         response.data.coins.forEach(coin => {
-            console.log(coin);
+            msg.setAuthor({ name: coin.name, iconURL: coin.icon, url: coin.websiteUrl })
+            msg.setDescription('\n\n' + '**🏅 Rank : ' + coin.rank + '**\n'+'test')
+            msg.setTitle(coin.name + ' Information')
+
+            client.channels.cache.get('998534356928843911').send({ embeds: [msg] })
+            // console.log(coin);
         });
-    }).catch(function (error) {
+    }).catch(error => {
         console.log(error);
     });
 
-    // icon
-    // name
+    // icon //
+    // name //
     // rank
     // price : $
     // priceBtc
@@ -28,5 +36,5 @@ module.exports = () => {
     // priceChange1h
     // priceChange1d
     // priceChange1w
-    // websiteUrl : website
+    // websiteUrl : website //
 }
