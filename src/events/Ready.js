@@ -10,7 +10,7 @@ module.exports = {
 
         console.log(`CONNECTED TO : ${client.user.username}`)
 
-        functions.Info()
+        functions.Info(client)
 
         // setInterval(async () => {
 
