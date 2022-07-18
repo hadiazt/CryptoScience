@@ -50,7 +50,7 @@ module.exports = (client) => {
             client.channels.cache.get('998534356928843911').send({ embeds: [EMBED] })
         });
     }).catch(error => {
-        console.log(error);
+        client.channels.cache.get('998628611030536284').send('```log\n' + error + '\n```')
     });
 
     // icon //
