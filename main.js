@@ -20,7 +20,7 @@ for (const file of eventFiles) {
 }
 
 console.log(chalk.red('-------------- LOADING READY FUNCTIONS --------------'));
-const RFunctionFiles = readdirSync('./Functions/Ready').filter(file => file.endsWith('.js'));
+const RFunctionFiles = readdirSync('./src/Functions/Ready').filter(file => file.endsWith('.js'));
 for (const file of RFunctionFiles) {
     console.log(chalk.blue(file + ' LOADED'));
 }
