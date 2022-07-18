@@ -13,9 +13,9 @@ module.exports = (client) => {
 
         response.data.coins.forEach(coin => {
 
-            if (coin.priceChange1h.toString().startsWith('-')) eh = "📉"; else eh = "📈 +"
-            if (coin.priceChange1d.toString().startsWith('-')) ed = "📉"; else ed = "📈 +"
-            if (coin.priceChange1w.toString().startsWith('-')) ew = "📉"; else ew = "📈 +"
+            if (coin.priceChange1h.toString().startsWith('-')) ch = "📉 "; else ch = "📈 +"
+            if (coin.priceChange1d.toString().startsWith('-')) cd = "📉 "; else cd = "📈 +"
+            if (coin.priceChange1w.toString().startsWith('-')) cw = "📉 "; else cw = "📈 +"
 
             EMBED.setColor('#e83c70')
             EMBED.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
@@ -39,17 +39,15 @@ module.exports = (client) => {
 **<:web:998617971272454144> [WebSite](${coin.websiteUrl})**
 
 `)
-
             EMBED.setFields(
                 { name: '\u200B', value: '\u200B' },
-                { name: 'Changes 1H', value: + coin.priceChange1h + '%', inline: true },
-                { name: 'Changes 1D', value: + coin.priceChange1d + '%', inline: true },
-                { name: 'Changes 1W', value: + coin.priceChange1w + '%', inline: true },
+                { name: 'Changes 1H', value: ch + coin.priceChange1h + '%', inline: true },
+                { name: 'Changes 1D', value: cd + coin.priceChange1d + '%', inline: true },
+                { name: 'Changes 1W', value: cw + coin.priceChange1w + '%', inline: true },
             )
             EMBED.setTimestamp()
 
-
-            // client.channels.cache.get('998534356928843911').send({ embeds: [EMBED] })
+            client.channels.cache.get('998534356928843911').send({ embeds: [EMBED] })
         });
     }).catch(error => {
         console.log(error);
