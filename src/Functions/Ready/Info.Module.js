@@ -30,6 +30,9 @@ module.exports = (client) => {
 
 **<:chart:998623322776547328> MarketCap : ${coin.marketCap}**
 
+
+**<:ts:998624089876992001> TotalSupply : ${coin.totalSupply}**
+
 **<:web:998617971272454144> [WebSite](${coin.websiteUrl})**
 
 `)
@@ -55,7 +58,7 @@ module.exports = (client) => {
     // volume //
     // marketCap //
     // availableSupply
-    // totalSupply
+    // totalSupply //
     // priceChange1h
     // priceChange1d
     // priceChange1w
