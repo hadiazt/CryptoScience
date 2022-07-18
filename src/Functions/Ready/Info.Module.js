@@ -7,29 +7,26 @@ var config = {
     headers: {}
 };
 
-
-
 module.exports = () => {
-    axios(config)
-        .then(function (response) {
-            response.data.coins.forEach(coin => {
-                console.log(coin);
-            });
-        })
-        .catch(function (error) {
-            console.log(error);
+    axios(config).then(response => {
+        response.data.coins.forEach(coin => {
+            console.log(coin);
         });
-// icon
-// name
-// rank
-// price : $
-// priceBtc
-// volume
-// marketCap
-// availableSupply
-// totalSupply
-// priceChange1h
-// priceChange1d
-// priceChange1w
-// websiteUrl : website
+    }).catch(function (error) {
+        console.log(error);
+    });
+
+    // icon
+    // name
+    // rank
+    // price : $
+    // priceBtc
+    // volume
+    // marketCap
+    // availableSupply
+    // totalSupply
+    // priceChange1h
+    // priceChange1d
+    // priceChange1w
+    // websiteUrl : website
 }
