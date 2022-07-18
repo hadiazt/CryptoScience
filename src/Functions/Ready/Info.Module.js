@@ -1,6 +1,7 @@
 var axios = require('axios');
 const { MessageEmbed } = require('discord.js');
 const { Endpoints } = require('../../../data/APIEndPoints');
+const { msgchid, errchid } = require('../../../data/config.json')
 
 var config = {
     method: 'get',
@@ -37,7 +38,6 @@ module.exports = (client) => {
 **<:ts:998624089876992001> TotalSupply : ${coin.totalSupply}**
 
 **<:web:998617971272454144> [WebSite](${coin.websiteUrl})**
-
 `)
             EMBED.setFields(
                 { name: '\u200B', value: '\u200B' },
@@ -47,10 +47,10 @@ module.exports = (client) => {
             )
             EMBED.setTimestamp()
 
-            client.channels.cache.get('998534356928843911').send({ embeds: [EMBED] })
+            client.channels.cache.get(msgchid).send({ embeds: [EMBED] })
         });
     }).catch(error => {
-        client.channels.cache.get('998628611030536284').send('```log\n' + error + '\n```')
+        client.channels.cache.get(errchid).send('```log\n' + error + '\n```')
     });
 
     // icon //
