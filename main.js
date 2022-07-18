@@ -1,8 +1,8 @@
 const Discord = require("discord.js")
 const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_VOICE_STATES] })
 
-const { Token } = require("./data/config.json")
-client.login(Token)
+const { token } = require("./data/config.json")
+client.login(token)
 
 const chalk = require('chalk')
 const { readdirSync } = require('fs')
