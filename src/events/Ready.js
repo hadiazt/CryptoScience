@@ -1,5 +1,6 @@
 const chalk = require('chalk')
 
+const functions = require('../Functions/handler')
 
 module.exports = {
     name: 'ready',
