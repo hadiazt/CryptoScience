@@ -52,20 +52,4 @@ module.exports = (client) => {
     }).catch(error => {
         client.channels.cache.get(errchid).send('```log\n' + error + '\n```')
     });
-
-    // icon //
-    // name //
-    // rank //
-    // price : $ //
-    // priceBtc //
-    // volume //
-    // marketCap //
-    // availableSupply
-    // totalSupply //
-    // priceChange1h
-    // priceChange1d
-    // priceChange1w
-    // websiteUrl : website //
-
-
 }
