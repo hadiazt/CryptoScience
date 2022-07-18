@@ -12,6 +12,7 @@ module.exports = (client) => {
         const msg = new MessageEmbed()
 
         response.data.coins.forEach(coin => {
+ 
             msg.setAuthor({ name: coin.name, iconURL: coin.icon, url: coin.websiteUrl })
             msg.setTitle(coin.name + ' Information')
             msg.setDescription(`
@@ -21,14 +22,16 @@ module.exports = (client) => {
 
 **<:btc:998615614321070110> PriceBTC : ${coin.priceBtc}**
 
-**Volume : **
+**<:count:998619072315019324> Volume : ${coin.volume}**
+
+**MarketCap : ${coin.marketCap}**
 
 **<:web:998617971272454144> [WebSite](${coin.websiteUrl})**
 `)
 
 
-            client.channels.cache.get('998534356928843911').send({ embeds: [msg] })
-            // console.log(coin);
+            // client.channels.cache.get('998534356928843911').send({ embeds: [msg] })
+            console.log(coin);
         });
     }).catch(error => {
         console.log(error);
@@ -39,12 +42,18 @@ module.exports = (client) => {
     // rank //
     // price : $ //
     // priceBtc //
-    // volume
-    // marketCap
+    // volume //
+    // marketCap //
     // availableSupply
     // totalSupply
     // priceChange1h
     // priceChange1d
     // priceChange1w
     // websiteUrl : website //
+
+    if (coin.priceChange1h.startsWith('-')) {
+                
+    } else {
+        
+    }
 }
