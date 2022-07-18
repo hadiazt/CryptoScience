@@ -9,8 +9,8 @@ module.exports = {
         console.log(chalk.red('--------------------------------------------'));
 
         console.log(`CONNECTED TO : ${client.user.username}`)
-        
-        // functions.Info()
+
+        functions.Info()
 
         // setInterval(async () => {
 
