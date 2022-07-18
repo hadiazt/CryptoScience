@@ -16,7 +16,7 @@ module.exports = (client) => {
             // if (coin.priceChange1h.startsWith('-')) eh = "📉"; else eh = "📈 +"
             // if (coin.priceChange1d.startsWith('-')) ed = "📉"; else ed = "📈 +"
             // if (coin.priceChange1w.startsWith('-')) ew = "📉"; else ew = "📈 +"
-
+            msg.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
             msg.setAuthor({ name: coin.name, iconURL: coin.icon, url: coin.websiteUrl })
             msg.setTitle(coin.name + ' Information')
             msg.setDescription(`
@@ -30,18 +30,22 @@ module.exports = (client) => {
 
 **<:chart:998623322776547328> MarketCap : ${coin.marketCap}**
 
+**<:as:998624615473610912> AvailableSupply : ${coin.availableSupply}**
 
 **<:ts:998624089876992001> TotalSupply : ${coin.totalSupply}**
 
 **<:web:998617971272454144> [WebSite](${coin.websiteUrl})**
 
 `)
+
             // msg.addFields(
             //     { name: '\u200B', value: '\u200B' },
             //     { name: 'Changes 1H', value: eh + coin.priceChange1h + '%', inline: true },
             //     { name: 'Changes 1D', value: ed + coin.priceChange1d + '%', inline: true },
             //     { name: 'Changes 1W', value: ew + coin.priceChange1w + '%', inline: true },
             // )
+            msg.setTimestamp()
+
 
             client.channels.cache.get('998534356928843911').send({ embeds: [msg] })
             // console.log(coin);
