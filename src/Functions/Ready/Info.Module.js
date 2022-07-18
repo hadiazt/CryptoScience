@@ -12,7 +12,11 @@ module.exports = (client) => {
         const msg = new MessageEmbed()
 
         response.data.coins.forEach(coin => {
- 
+
+            // if (coin.priceChange1h.startsWith('-')) eh = "📉"; else eh = "📈 +"
+            // if (coin.priceChange1d.startsWith('-')) ed = "📉"; else ed = "📈 +"
+            // if (coin.priceChange1w.startsWith('-')) ew = "📉"; else ew = "📈 +"
+
             msg.setAuthor({ name: coin.name, iconURL: coin.icon, url: coin.websiteUrl })
             msg.setTitle(coin.name + ' Information')
             msg.setDescription(`
@@ -24,14 +28,20 @@ module.exports = (client) => {
 
 **<:count:998619072315019324> Volume : ${coin.volume}**
 
-**MarketCap : ${coin.marketCap}**
+**<:chart:998623322776547328> MarketCap : ${coin.marketCap}**
 
 **<:web:998617971272454144> [WebSite](${coin.websiteUrl})**
+
 `)
+            // msg.addFields(
+            //     { name: '\u200B', value: '\u200B' },
+            //     { name: 'Changes 1H', value: eh + coin.priceChange1h + '%', inline: true },
+            //     { name: 'Changes 1D', value: ed + coin.priceChange1d + '%', inline: true },
+            //     { name: 'Changes 1W', value: ew + coin.priceChange1w + '%', inline: true },
+            // )
 
-
-            // client.channels.cache.get('998534356928843911').send({ embeds: [msg] })
-            console.log(coin);
+            client.channels.cache.get('998534356928843911').send({ embeds: [msg] })
+            // console.log(coin);
         });
     }).catch(error => {
         console.log(error);
@@ -51,9 +61,5 @@ module.exports = (client) => {
     // priceChange1w
     // websiteUrl : website //
 
-    if (coin.priceChange1h.startsWith('-')) {
-                
-    } else {
-        
-    }
+
 }
