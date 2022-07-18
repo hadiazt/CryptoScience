@@ -9,17 +9,20 @@ var config = {
 };
 module.exports = (client) => {
     axios(config).then(response => {
-        const msg = new MessageEmbed()
+        const EMBED = new MessageEmbed()
 
         response.data.coins.forEach(coin => {
+
+            console.log(coin.priceChange1h);
 
             // if (coin.priceChange1h.startsWith('-')) eh = "📉"; else eh = "📈 +"
             // if (coin.priceChange1d.startsWith('-')) ed = "📉"; else ed = "📈 +"
             // if (coin.priceChange1w.startsWith('-')) ew = "📉"; else ew = "📈 +"
-            msg.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
-            msg.setAuthor({ name: coin.name, iconURL: coin.icon, url: coin.websiteUrl })
-            msg.setTitle(coin.name + ' Information')
-            msg.setDescription(`
+            EMBED.setColor('')
+            EMBED.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
+            EMBED.setAuthor({ name: coin.name, iconURL: coin.icon, url: coin.websiteUrl })
+            EMBED.setTitle(coin.name + ' Information')
+            EMBED.setDescription(`
 **<:medal:998614813578117120> Rank : ${coin.rank}**
 
 **<:dollar:998616045856231495> Price : ${coin.price}$**
@@ -38,17 +41,16 @@ module.exports = (client) => {
 
 `)
 
-            msg.setFields(
+            EMBED.setFields(
                 { name: '\u200B', value: '\u200B' },
-                { name: 'Changes 1H', value:  + coin.priceChange1h + '%', inline: true },
-                { name: 'Changes 1D', value:  + coin.priceChange1d + '%', inline: true },
-                { name: 'Changes 1W', value:  + coin.priceChange1w + '%', inline: true },
+                { name: 'Changes 1H', value: + coin.priceChange1h + '%', inline: true },
+                { name: 'Changes 1D', value: + coin.priceChange1d + '%', inline: true },
+                { name: 'Changes 1W', value: + coin.priceChange1w + '%', inline: true },
             )
-            msg.setTimestamp()
+            EMBED.setTimestamp()
 
 
-            client.channels.cache.get('998534356928843911').send({ embeds: [msg] })
-            // console.log(coin);
+            // client.channels.cache.get('998534356928843911').send({ embeds: [EMBED] })
         });
     }).catch(error => {
         console.log(error);
