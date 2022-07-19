@@ -14,7 +14,7 @@ module.exports = (client) => {
         const EMBED = new MessageEmbed()
         newss.forEach(news => {
             EMBED.setTitle(news.title)
-            EMBED.setAuthor({ name: news.source, url: 'https://www.google.com/search?q=' + news.sourse })
+            EMBED.setAuthor({ name: 'Source : ' + news.source, url: 'https://www.google.com/search?q=' + news.sourse })
             EMBED.setColor('#e83c70')
             EMBED.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
             EMBED.setImage(news.imgURL)
