@@ -15,6 +15,7 @@ module.exports = (client) => {
         newss.forEach(news => {
             EMBED.setTitle(news.title)
             EMBED.setAuthor({ name: news.source, url: 'https://www.google.com/search?q=' + news.sourse })
+            EMBED.setColor('#e83c70')
             EMBED.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
             EMBED.setImage(news.imgURL)
             EMBED.setDescription(news.description + '\n\n' + '**<:web:998617971272454144> [News Link](' + news.shareURL + ')**')
