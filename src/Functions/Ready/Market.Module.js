@@ -15,6 +15,8 @@ module.exports = (client) => {
         const EMBED = new MessageEmbed()
         Array.from(response.data, (element, index) => {
             EMBED.setTitle('Last 20 Crypto Trades')
+            EMBED.setColor('#e83c70')
+            EMBED.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
             EMBED.setDescription(`
 
 **<:medal:998614813578117120> Rank : ${index}**
@@ -30,7 +32,7 @@ module.exports = (client) => {
 **<:count:998619072315019324> Volume : ${element.volume}**
 `)
             EMBED.setTimestamp()
-            
+
             if (index < 20) {
                 client.channels.cache.get(msgchid).send({ embeds: [EMBED] })
             } else return;
