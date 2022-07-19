@@ -17,7 +17,7 @@ module.exports = (client) => {
             EMBED.setAuthor({ name: news.source, url: 'https://www.google.com/search?q=' + news.sourse })
             EMBED.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
             EMBED.setImage(news.imgURL)
-            EMBED.setDescription('**' + news.description + ' ** \n' + '**<:web:998617971272454144> [WebSite](' + news.shareURL + ')**')
+            EMBED.setDescription(news.description + '\n\n' + '**<:web:998617971272454144> [News Link](' + news.shareURL + ')**')
             EMBED.setTimestamp()
             client.channels.cache.get(msgchid).send({ embeds: [EMBED] })
         });
