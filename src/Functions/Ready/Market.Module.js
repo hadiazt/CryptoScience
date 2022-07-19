@@ -1,8 +1,9 @@
+const { Endpoints } = require('../../../data/APIEndPoints')
 var axios = require('axios');
 
 var config = {
     method: 'get',
-    url: 'https://api.coinstats.app/public/v1/markets?coinId=bitcoin',
+    url: Endpoints.Market,
     headers: {}
 };
 
