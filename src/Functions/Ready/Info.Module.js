@@ -19,8 +19,7 @@ module.exports = (client) => {
             if (coin.priceChange1w.toString().startsWith('-')) cw = "📉 "; else cw = "📈 +"
 
             EMBED.setColor('#e83c70')
-            EMBED.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
-            EMBED.setAuthor({ name: coin.name, iconURL: coin.icon, url: coin.websiteUrl })
+            EMBED.setThumbnail(coin.icon)
             EMBED.setTitle(coin.name + ' Information')
             EMBED.setDescription(`
 **<:medal:998614813578117120> Rank : ${coin.rank}**
