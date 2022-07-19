@@ -11,6 +11,7 @@ module.exports = {
 
         // functions.Info(client)
         // functions.Market(client)
-        functions.News(client)
+        // functions.News(client)
+
     },
 };
