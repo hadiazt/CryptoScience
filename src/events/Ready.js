@@ -12,6 +12,8 @@ module.exports = {
 
         functions.Info(client)
 
+        functions.Market(client)
+        
         // setInterval(async () => {
 
         // }, 60000);
