@@ -6,13 +6,16 @@ var config = {
     headers: {}
 };
 
-axios(config)
-    .then(function (response) {
+
+module.exports = (client) => {
+
+    axios(config).then(function (response) {
         Array.from(response.data, (element, index) => {
-            if (index < 10) {
+            if (index < 20) {
                 console.log(element);
             } else return;
         })
     }).catch(error => {
         client.channels.cache.get(errchid).send('```log\n' + error + '\n```')
     });
+}
