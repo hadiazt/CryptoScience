@@ -1,5 +1,10 @@
 {
     "token": "OTk4NTI3MDUzNDk2MzQwNTEx.GU7W-m.jogBF1_O03jAbXMb-ky7EBPghrCvb0QD27IZOw",
-    "msgchid":"998534356928843911",
-    "errchid":"998628611030536284"
+    "Channels": {
+        "CryptoPrice": "998534356928843911",
+        "News": "998534356928843911",
+        "Trades": "998534356928843911",
+        "WallsTrades": "998534356928843911",
+        "ERR": "998628611030536284"
+    }
 }
