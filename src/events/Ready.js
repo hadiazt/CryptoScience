@@ -9,7 +9,7 @@ module.exports = {
         console.log(chalk.red('--------------------------------------------'));
         console.log(`CONNECTED TO : ${client.user.username}`)
 
-        // functions.Info(client)
+        // functions.CryptoPrice(client)
         functions.Trades(client)
         // functions.News(client)
 
