@@ -1,7 +1,7 @@
 var axios = require('axios');
 const { MessageEmbed } = require('discord.js');
 const { Endpoints } = require('../../../data/APIEndPoints');
-const { msgchid, errchid } = require('../../../data/config.json')
+const { Channels } = require('../../../data/config.json')
 
 var config = {
     method: 'get',
@@ -20,9 +20,9 @@ module.exports = (client) => {
             EMBED.setImage(news.imgURL)
             EMBED.setDescription(news.description + '\n\n' + '**<:web:998617971272454144> [News Link](' + news.shareURL + ')**')
             EMBED.setTimestamp()
-            client.channels.cache.get(msgchid).send({ embeds: [EMBED] })
+            client.channels.cache.get(Channels.News).send({ embeds: [EMBED] })
         });
     }).catch(error => {
-        client.channels.cache.get(errchid).send('```log\n' + error + '\n```')
+        client.channels.cache.get(Channels.ERR).send('```log\n' + error + '\n```')
     });
 }
