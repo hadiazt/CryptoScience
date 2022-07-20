@@ -12,7 +12,7 @@ module.exports = {
         // functions.CryptoPrice(client)
         // functions.Trades(client)
         // functions.News(client)
-        functions.WhaleTrades(client)
+        // functions.WhaleTrades(client)
 
     },
 };
