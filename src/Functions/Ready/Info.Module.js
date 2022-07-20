@@ -5,7 +5,7 @@ const { msgchid, errchid } = require('../../../data/config.json')
 
 var config = {
     method: 'get',
-    url: Endpoints.Top10Info,
+    url: Endpoints.Info,
     headers: {}
 };
 module.exports = (client) => {
