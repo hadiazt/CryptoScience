@@ -10,7 +10,7 @@ module.exports = {
         console.log(`CONNECTED TO : ${client.user.username}`)
 
         // functions.Info(client)
-        // functions.Market(client)
+        functions.Trades(client)
         // functions.News(client)
 
     },
