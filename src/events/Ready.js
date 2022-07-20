@@ -10,8 +10,9 @@ module.exports = {
         console.log(`CONNECTED TO : ${client.user.username}`)
 
         // functions.CryptoPrice(client)
-        functions.Trades(client)
+        // functions.Trades(client)
         // functions.News(client)
+        functions.WhaleTrades(client)
 
     },
 };
