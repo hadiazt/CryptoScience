@@ -7,5 +7,5 @@ exports.Endpoints = {
     Info: this.BaseURL + "/coins?skip=0&limit=10",
     Market: this.BaseURL + "/markets?coinId=bitcoin",
     News: this.BaseURL + "/news?skip=0&limit=10",
-    WhaleTrades: this.BaseURL2 + `/transactions?api_key=${APIKEY}&limit=50`
+    WhaleTrades: this.BaseURL2 + `/transactions?api_key=${APIKEY}&limit=30`
 }
