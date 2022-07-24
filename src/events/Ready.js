@@ -1,6 +1,6 @@
 const chalk = require('chalk')
 
-const functions = require('../Functions/handler')
+const functions = require('../Functions/handler.js')
 
 module.exports = {
     name: 'ready',
