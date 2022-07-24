@@ -2,6 +2,13 @@
     "token": "OTk4NTI3MDUzNDk2MzQwNTEx.GU7W-m.jogBF1_O03jAbXMb-ky7EBPghrCvb0QD27IZOw",
     "APIKEY": "nrOKBW6ws9KoBzUbO49dkzY634njc6Id",
     "Channels": {
+        "CryptoPrice": "995062302124540026",
+        "News": "995062267299237968",
+        "Trades": "995073357030625330",
+        "WhaleTrades": "995073357030625330",
+        "ERR": "998628611030536284"
+    },
+    "TestChannels":{
         "CryptoPrice": "998534356928843911",
         "News": "998534356928843911",
         "Trades": "998534356928843911",
