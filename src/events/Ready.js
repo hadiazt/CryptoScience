@@ -8,6 +8,8 @@ module.exports = {
     async execute(client) {
         console.log(chalk.red('--------------------------------------------'));
         console.log(`CONNECTED TO : ${client.user.username}`)
+        
+        functions.Presence(client)
 
         setInterval(() => {
             // 1h
