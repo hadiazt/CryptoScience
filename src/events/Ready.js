@@ -9,17 +9,17 @@ module.exports = {
         console.log(chalk.red('--------------------------------------------'));
         console.log(`CONNECTED TO : ${client.user.username}`)
 
-        // setInterval(() => {
-        //     // 1h
-        //     functions.CryptoPrice(client)
-        //     functions.Trades(client)
-        //     functions.WhaleTrades(client)
-        // }, interval);
+        setInterval(() => {
+            // 1h
+            functions.CryptoPrice(client)
+            functions.Trades(client)
+            functions.WhaleTrades(client)
+        }, 3600000);
 
-        // setInterval(() => {
-        //     // 15 min
-        //     functions.News(client)
-        // }, interval);
+        setInterval(() => {
+            // 15 min
+            functions.News(client)
+        }, 900000);
 
     },
 };
