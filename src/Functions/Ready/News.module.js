@@ -1,6 +1,6 @@
 var axios = require('axios');
 const { MessageEmbed } = require('discord.js');
-const { Endpoints } = require('../../../data/APIEndPoints');
+const { Endpoints } = require('../../../data/APIEndPoints.js');
 const { Channels } = require('../../../data/config.json')
 
 var config = {
