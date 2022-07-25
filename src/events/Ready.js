@@ -11,17 +11,17 @@ module.exports = {
         
         functions.Presence(client)
 
-        setInterval(() => {
+        // setInterval(() => {
             // 1h
-            functions.CryptoPrice(client)
-            functions.Trades(client)
+            // functions.CryptoPrice(client)
+            // functions.Trades(client)
             functions.WhaleTrades(client)
-        }, 3600000);
+        // }, 3600000);
 
-        setInterval(() => {
-            // 15 min
-            functions.News(client)
-        }, 900000);
+        // setInterval(() => {
+        //     // 15 min
+        //     functions.News(client)
+        // }, 900000);
 
     },
 };
