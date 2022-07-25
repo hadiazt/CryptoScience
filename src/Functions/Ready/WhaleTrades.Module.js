@@ -26,7 +26,7 @@ module.exports = (client) => {
             EMBED.setThumbnail(client.user.displayAvatarURL({ size: 2048 }))
             EMBED.setDescription(`
 
-**<:medal:998614813578117120> Rank : ${index}**
+**<:medal:998614813578117120> Rank : ${index + 1}**
 
 **${Trades.amount} ${Trades.blockchain} (${Trades.amount_usd} USD) ${Trades.transaction_type} From ${FO} Wallet To ${TO}**
 `)
