@@ -1,4 +1,4 @@
-const { APIKEY } = process.env.APIKEY
+const APIKEY = process.env.APIKEY
 
 exports.BaseURL = "https://api.coinstats.app/public/v1";
 exports.BaseURL2 = "https://api.whale-alert.io/v1";
