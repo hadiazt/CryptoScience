@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_VOICE_STATES] })
 
-const { token } = require("./data/config.json")
+const token = process.env.token;
 client.login(process.env.token)
 
 const chalk = require('chalk')
